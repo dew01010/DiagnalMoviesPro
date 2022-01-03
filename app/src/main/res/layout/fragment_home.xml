@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.home.HomeFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@android:color/transparent"
+        android:translationZ="@dimen/_100sdp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@drawable/nav_bar"
+                android:gravity="center"
+                android:id="@+id/title_layout"
+                android:paddingHorizontal="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/back_bt"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/back" />
+
+                <TextView
+                    android:id="@+id/tv_shows_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:text="Title"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/text_primary" />
+
+                <ImageView
+                    android:id="@+id/search_bt"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:src="@drawable/search" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/search_layout"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@drawable/nav_bar"
+                android:gravity="center"
+                android:visibility="gone"
+                android:paddingHorizontal="@dimen/_8sdp">
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/ed_search"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:text="Title"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/text_primary" />
+
+                <ImageView
+                    android:id="@+id/search_close_bt"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:src="@drawable/search_cancel" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_home_feed"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_movie" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
