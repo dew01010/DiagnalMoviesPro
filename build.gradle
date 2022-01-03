@@ -3,7 +3,9 @@ buildscript {
 
     ext {
         nav_version = "2.3.5"
-        paging_version = "3.0.1"
+        paging_version = "3.1.0"
+        gson_version = "2.8.6"
+        dagger_version = "2.40.4"
     }
 
     repositories {
